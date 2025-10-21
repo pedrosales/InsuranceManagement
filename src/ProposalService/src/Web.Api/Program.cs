@@ -1,28 +1,18 @@
 using System.Reflection;
-using WebApi.Extensions;
-using Application;
-using Application.Abstractions;
-using Infrastructure;
-using Infrastructure.Clients;
 using Web.Api;
+using Web.Api.Extensions;
+using Application;
+using Infrastructure;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddHttpClient<IProposalClient, ProposalClient>((serviceProvider, httpClient) =>
-{
-    httpClient.BaseAddress = new Uri("https://localhost:7059/");
-    httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-});
-
 builder.Services
     .AddApplication()
     .AddPresentation()
     .AddInfrastructure(builder.Configuration);
 
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
-
-
 
 WebApplication app = builder.Build();
 
@@ -36,6 +26,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 
 await app.RunAsync();

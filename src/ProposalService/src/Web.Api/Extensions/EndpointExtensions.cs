@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Web.Api.Endpoints;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace WebApi.Extensions;
+namespace Web.Api.Extensions;
 
 public static class EndpointExtensions
 {
