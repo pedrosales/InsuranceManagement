@@ -17,27 +17,43 @@ Prerequisites:
 
 ## Running PostgreSQL with docker (local)
 
+Create a named volume:
+
 ```
-Create a named volume: docker volume create pgdata
-Start PostgreSQL 16: docker run -d --name postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=mydb -p 5432:5432 -v pgdata:/var/lib/postgresql/data --restart unless-stopped postgres:16
+ docker volume create pgdata
+```
+
+Start PostgreSQL 16:
+
+```
+docker run -d --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=mydb -p 5432:5432 -v pgdata:/var/lib/postgresql/data --restart unless-stopped postgres:16
+
 ```
 
 ## EF Core migrations (local)
 
-Example (ProposalService):
+(ProposalService):
+
+Delete Migrations Folder then
 
 ```
+
 cd src\ProposalService\src\Infrastructure
 dotnet ef migrations add Initial --startup-project ../Web.Api
 dotnet ef database update --startup-project ../Web.Api
+
 ```
 
 (Contract Service)
 
+Delete Migrations Folder then
+
 ```
+
 cd src\ContractService\src\Infrastructure
 dotnet ef migrations add Initial --startup-project ../Web.Api
 dotnet ef database update --startup-project ../Web.Api
+
 ```
 
 ## Running (local)

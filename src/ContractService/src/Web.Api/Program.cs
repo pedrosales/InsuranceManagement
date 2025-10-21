@@ -11,7 +11,9 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddHttpClient<IProposalClient, ProposalClient>((serviceProvider, httpClient) =>
 {
-    httpClient.BaseAddress = new Uri("https://localhost:7059/");
+    string? proposalServiceUrl = builder.Configuration.GetValue<string>("Services:ProposalService");
+
+    httpClient.BaseAddress = new Uri(proposalServiceUrl!);
     httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 

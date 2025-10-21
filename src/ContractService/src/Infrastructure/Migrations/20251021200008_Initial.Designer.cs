@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251021031807_Initial")]
+    [Migration("20251021200008_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -25,34 +25,25 @@ namespace Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Proposal.ProposalItem", b =>
+            modelBuilder.Entity("Domain.Contract.ContractItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<Guid>("ProposalId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("proposal_id");
+
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer")
-                        .HasColumnName("status");
-
-                    b.Property<decimal>("Value")
-                        .HasColumnType("numeric")
-                        .HasColumnName("value");
+                        .HasColumnName("start_date");
 
                     b.HasKey("Id")
-                        .HasName("pk_proposals");
+                        .HasName("pk_contracts");
 
-                    b.ToTable("proposals", (string)null);
+                    b.ToTable("contracts", (string)null);
                 });
 #pragma warning restore 612, 618
         }
