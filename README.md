@@ -1,7 +1,5 @@
 # Insurance Management - .NET 8, Clean Architecture, DDD, CQRS, EF Core, RabbitMQ
 
-This repository provides a skeleton for managing insurance proposals and contracting, using:
-
 - .NET 8
 - Clean Architecture + DDD + CQRS
 - EF Core with PostgreSql
@@ -15,7 +13,7 @@ This repository provides a skeleton for managing insurance proposals and contrac
 Prerequisites:
 
 - Docker and Docker Compose
-- .NET 8 SDK (optional for dev)
+- .NET 8 SDK
 
 ## Running PostgreSQL with docker (local)
 
