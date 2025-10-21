@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Proposals;
 
-internal sealed class ProposalItemConfiguration : IEntityTypeConfiguration<ProposalItem>
+internal sealed class ProposalItemEntityConfiguration : IEntityTypeConfiguration<ProposalItem>
 {
     public void Configure(EntityTypeBuilder<ProposalItem> builder)
     {

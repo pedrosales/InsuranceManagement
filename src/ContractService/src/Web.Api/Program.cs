@@ -18,7 +18,7 @@ builder.Services.AddHttpClient<IProposalClient, ProposalClient>((serviceProvider
 builder.Services
     .AddApplication()
     .AddPresentation()
-    .AddInfrastructure();
+    .AddInfrastructure(builder.Configuration);
 
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 

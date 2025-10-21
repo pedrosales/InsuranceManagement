@@ -19,7 +19,7 @@ internal sealed class CreateProposalCommandHandler(IApplicationDbContext context
             throw new InvalidOperationException($"A proposal with the name '{command.Name}' already exists.");
         }
 
-        var proposalItem = new Domain.Proposal.ProposalItem
+        var proposalItem = new ProposalItem
         {
             Id = Guid.NewGuid(),
             Name = command.Name,
