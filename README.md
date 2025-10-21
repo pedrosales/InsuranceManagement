@@ -39,3 +39,11 @@ cd src\ContractService\src\Infrastructure
 dotnet ef migrations add Initial --startup-project ../Web.Api
 dotnet ef database update --startup-project ../Web.Api
 ```
+
+## Running (local)
+
+### Project setup in Visual Studio
+
+![Insurance Management setup](./docs/project-configuration.PNG)
+
+Then run.
