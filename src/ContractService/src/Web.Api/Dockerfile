@@ -16,7 +16,6 @@ COPY ["Directory.Packages.props", "."]
 COPY ["src/ContractService/src/Web.Api/Web.Api.csproj", "src/ContractService/src/Web.Api/"]
 COPY ["src/ContractService/src/Infrastructure/Infrastructure.csproj", "src/ContractService/src/Infrastructure/"]
 COPY ["src/ContractService/src/Application/Application.csproj", "src/ContractService/src/Application/"]
-COPY ["src/ContractService/src/Domain/Domain.csproj", "src/ContractService/src/Domain/"]
 COPY ["src/SharedKernel/SharedKernel.csproj", "src/SharedKernel/"]
 RUN dotnet restore "./src/ContractService/src/Web.Api/Web.Api.csproj"
 COPY . .

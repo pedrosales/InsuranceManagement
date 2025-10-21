@@ -24,7 +24,7 @@ services:
       - "15672:15672"
 
   proposal-api:
-    build: ./ProposalService
+    build: ./src/ProposalService/src/Web.Api
     depends_on:
       - postgres
       - rabbitmq
@@ -36,7 +36,7 @@ services:
       - 5001:8081
 
   contract-api:
-    build: ./ContractService
+    build: ./src/ContractService/src/Web.Api
     depends_on:
       - postgres
       - rabbitmq

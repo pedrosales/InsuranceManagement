@@ -17,7 +17,6 @@ COPY ["src/ProposalService/src/Web.Api/Web.Api.csproj", "src/ProposalService/src
 COPY ["src/ProposalService/src/Infrastructure/Infrastructure.csproj", "src/ProposalService/src/Infrastructure/"]
 COPY ["src/ProposalService/src/Application/Application.csproj", "src/ProposalService/src/Application/"]
 COPY ["src/ProposalService/src/Domain/Domain.csproj", "src/ProposalService/src/Domain/"]
-COPY ["src/SharedKernel/SharedKernel.csproj", "src/SharedKernel/"]
 RUN dotnet restore "./src/ProposalService/src/Web.Api/Web.Api.csproj"
 COPY . .
 WORKDIR "/src/ProposalService/src/Web.Api"
