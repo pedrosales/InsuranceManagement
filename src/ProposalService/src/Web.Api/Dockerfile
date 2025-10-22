@@ -19,7 +19,7 @@ COPY ["src/ProposalService/src/Application/Application.csproj", "src/ProposalSer
 COPY ["src/ProposalService/src/Domain/Domain.csproj", "src/ProposalService/src/Domain/"]
 RUN dotnet restore "./src/ProposalService/src/Web.Api/Web.Api.csproj"
 COPY . .
-WORKDIR "/src/ProposalService/src/Web.Api"
+WORKDIR "/src/src/ProposalService/src/Web.Api"
 RUN dotnet build "./Web.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
